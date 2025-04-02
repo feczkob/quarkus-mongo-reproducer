@@ -1,6 +1,6 @@
 Thread: https://quarkusio.zulipchat.com/#narrow/channel/187030-users/topic/Quarkus.203.2E21.2E0.20MongoDB.20Thread.20blocked/near/509523858
 
-To see the error, run the following command:
+To see the error, first build the `example-api`: `./mvnw clean install` in the appropriate directory. The run the following command in the root folder:
 ```
 ./mvnw clean install -q -U &&     ./mvnw test-compile failsafe:integration-test failsafe:verify -Dnative -q
 ```
