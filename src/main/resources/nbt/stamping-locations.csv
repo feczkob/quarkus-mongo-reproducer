@@ -1,0 +1,153 @@
+Kezdőpont ID;Kezdőpont (bélyegzőhely);Menetrendek település Id;Menetrendek megálló Id
+1;Írott-kő;;
+2;Hét-forrás;;
+3;Kőszeg;1683;0
+4;Tömörd;516;0
+5;Ablánci malom;721;14958
+6;Szeleste;3317;0
+7;Bögöt;1165;0
+8;Csényeújmajor;2130;15055
+9;Sárvár;2130;0
+10;Gérce;2615;0
+11;Rózsáskerti erdészház;;
+12;Hidegkúti vadászház;;
+13;Káld;2995;0
+14;Hosszúpereszteg;2088;0
+15;Szajki erdészház;2088;15174
+16;Ötvös;;
+17;Kisvásárhely;1636;0
+18;Sümeg;2559;0
+19;Sarvaly erdészház;;
+20;Zalaszántó;3328;0
+21;Rezi;2389;0
+22;Gyöngyösi csárda;2389;18911
+23;Hévíz;381;0
+24;Keszthely;1842;0
+25;Vállus;1068;0
+26;Lesenceistvánd;2196;0
+27;Tapolca;2943;0
+28;Szent György-hegy;;
+29;Szigliget;2489;0
+30;Badacsonytördemic;326;0
+31;Káptalantóti;563;0
+32;Csobánc;;
+33;Szentbékkálla;709;0
+34;Balatonhenye;363;0
+35;Csicsói erdészház;;
+36;Nagyvázsony;1919;0
+37;Kab-hegy;;
+38;Úrkút;2085;0
+39;Városlőd;706;0
+40;Németbánya;1040;0
+41;Bakonybél;2374;0
+42;Kőris-hegy;;
+43;Borzavár;3025;0
+44;Zirc;2649;0
+45;Bakonynána;2599;0
+46;Jásd;1743;0
+47;Csőszpuszta;2057;1557
+48;Kisgyón;;
+49;Bakonykúti;2315;0
+50;Fehérvárcsurgó;;
+51;Bodajk;1825;0
+52;Csókakő;2190;636
+53;Gánt;1575;0
+54;Mindszentpuszta;;
+55;Kőhányás;1575;796
+56;Várgesztes;1725;0
+57;Szárliget;3349;0
+58;Somlyóvár;;
+59;Koldusszállás;1815;16277
+60;Bánya-hegyi erdészház;;
+61;Gerecse üdülő;;
+62;Pusztamarót;;
+63;Péliföldszentkereszt;2935;16151
+64;Mogyorósbánya;2825;0
+65;Tokodi pincék;1415;15896
+66;Tokod;1415;15889
+67;Dorog;1049;0
+68;Klastrompuszta;;
+69;Piliscsaba;714;0
+70;Zsíros-hegy;;
+71;Hűvösvölgy;1357;84159
+72;Hármashatár-hegy;;
+73;Virágos-nyereg;;
+74;Rozália téglagyár;738;17858
+75;Kevély-nyereg;;
+76;Pilisszentkereszt;1873;24580
+77;Dobogókő;1873;18650
+78;Sikárosi erdészház;;
+79;Pilisszentlászló;845;0
+80;Pap-réti erdészház;;
+81;Nagy-Villám;2841;17248
+82;Visegrád;2841;17251
+83;Nagymaros;3173;0
+84;Törökmező turistaház;;
+85;Kisinóci turistaház;2467;17557
+86;Nagy-Hideg-hegy;;
+87;Nógrád;435;0
+88;Lokó-pihenő;;
+89;Magyarkút;3372;0
+90;Katalinpuszta;450;11332
+91;Ősagárd;1931;0
+92;Felsőpetény;2432;0
+93;Alsópetény;1642;0
+94;Romhány;1219;0
+95;Kétbodony;1184;0
+96;Becske;1201;0
+97;Szandaváralja;1375;0
+98;Cserhátsurány;2259;0
+99;Nógrádsipek;1949;0
+100;Hollókő;3324;0
+101;Bableves csárda;1384;11161
+102;Nagybárkány;1639;0
+103;Mátraverebély;3010;0
+104;Ágasvár turistaház;;
+105;Mátraszentistván;2904;10614
+106;Galyatető;2904;24728
+107;Vércverés;;
+108;Vörösmarty fogadó;523;10699
+109;Mátraháza;523;10700
+110;Kékestető;523;10690
+111;Hármashatár erdészház;;
+112;Sirok;852;0
+113;Rozsnakpuszta;;
+114;Szarvaskő;338;0
+115;Telekessy vendégház;;
+116;Bélapátfalva;3326;0
+117;Cserepes-kői-barlang;;
+118;Bánkút;;
+119;Mályinka;1491;0
+120;Uppony;1835;0
+121;Putnok;2741;0
+122;Kelemér;1203;0
+123;Gömörszőlős;970;0
+124;Zádorfalva;306;0
+125;Aggtelek;936;0
+126;Jósvafő;1568;0
+127;Derenk;;
+128;Szabó-pallag erdészház;;
+129;Bódvaszilas;592;0
+130;Bódvarákó;3330;0
+131;Tornabarakony;1690;0
+132;Rakacaszend;1613;0
+133;Felsővadász;2353;0
+134;Abaújszolnok;2633;0
+135;Baktakék;1818;0
+136;Fancsal;1255;0
+137;Encs;3304;0
+138;Gibárt;2096;0
+139;Hernádcéce;939;0
+140;Boldogkőváralja;1447;0
+141;Regéc;840;0
+142;Istvánkúti vadászház;;
+143;Eszkála erdészház;;
+144;Makkoshotyka;1960;3469
+145;Cirkáló-tanya;;
+146;Nagy-nyugodó;;
+147;Vágáshuta;2915;0
+148;Nagyhuta;1546;0
+149;Bózsva;3100;0
+150;Füzér;1710;0
+151;Bodó-rét;;
+152;Hollóháza;3116;0

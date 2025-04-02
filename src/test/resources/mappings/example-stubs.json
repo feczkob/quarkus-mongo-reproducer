@@ -1,0 +1,296 @@
+{
+  "mappings": [
+    {
+      "name": "Route request",
+      "request": {
+        "method": "POST",
+        "url": "/index.php",
+        "bodyPatterns": [
+          {
+            "equalToJson": "{ \"type\": \"route\" }",
+            "ignoreArrayOrder": true,
+            "ignoreExtraElements": true
+          }
+        ]
+      },
+      "response": {
+        "status": 200,
+        "jsonBody": {
+          "status": "success",
+          "results": {
+            "date_got": "2024-12-27",
+            "napkiiras": null,
+            "daytype_got": null,
+            "apache_hostname": null,
+            "used_params": null,
+            "talalatok": {
+              "1": {
+                "departureCity": "Budapest",
+                "departureStation": "Déli",
+                "departureLs": 12312,
+                "arrivalCity": "Pécs",
+                "arrivalStation": "Keleti",
+                "arrivalLs": 12313,
+                "indulasi_ido": "06:00",
+                "erkezesi_ido": "08:00",
+                "atszallasok_szama": 1,
+                "osszido": "02:00",
+                "riskyTransfer": false,
+                "totalFare": 400,
+                "nativeData": [
+                  {
+                    "DepartureSettle": 12312,
+                    "DepartureStation": 12312,
+                    "FromSettle": "Budapest",
+                    "DepStationName": "Déli",
+                    "DepartureTime": 360,
+                    "ArrivalSettle": 12313,
+                    "ArrivalStation": 12313,
+                    "ToSettle": "Pécs",
+                    "ArrStationName": "Keleti",
+                    "ArrivalTime": 480,
+                    "TransportMode": "vehicles.train",
+                    "LongName": "123"
+                  }
+                ],
+                "ind_prefix": null,
+                "indulasi_hely": null,
+                "ind_kulterulet": null,
+                "erk_prefix": null,
+                "erkezesi_hely": null,
+                "erk_kulterulet": null
+              },
+              "2": {
+                "departureCity": "Budapest",
+                "departureStation": "Déli",
+                "departureLs": 12312,
+                "arrivalCity": "Pécs",
+                "arrivalStation": "Keleti",
+                "arrivalLs": 12313,
+                "indulasi_ido": "18:00",
+                "erkezesi_ido": "20:00",
+                "atszallasok_szama": 1,
+                "osszido": "02:00",
+                "riskyTransfer": false,
+                "totalFare": 400,
+                "nativeData": [
+                  {
+                    "DepartureSettle": 12312,
+                    "DepartureStation": 12312,
+                    "FromSettle": "Budapest",
+                    "DepStationName": "Déli",
+                    "DepartureTime": 1080,
+                    "ArrivalSettle": 12313,
+                    "ArrivalStation": 12313,
+                    "ToSettle": "Pécs",
+                    "ArrStationName": "Keleti",
+                    "ArrivalTime": 1200,
+                    "TransportMode": "vehicles.train",
+                    "LongName": "123"
+                  }
+                ],
+                "ind_prefix": null,
+                "indulasi_hely": null,
+                "ind_kulterulet": null,
+                "erk_prefix": null,
+                "erkezesi_hely": null,
+                "erk_kulterulet": null
+              }
+            }
+          },
+          "nativeResults": null
+        },
+        "headers": {
+            "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "name": "Station request",
+      "request": {
+        "method": "POST",
+        "url": "/index.php",
+        "bodyPatterns": [
+          {
+            "equalToJson": "{ \"type\": \"station\" }",
+            "ignoreArrayOrder": true,
+            "ignoreExtraElements": true
+          }
+        ]
+      },
+      "response": {
+        "status": 200,
+        "jsonBody": {
+          "status": [
+            "success"
+          ],
+          "results": [
+            {
+              "settlement_name": "Miskolc",
+              "lsname": "Miskolc",
+              "ls_id": 0,
+              "settlement_id": 3045,
+              "site_code": "",
+              "type": "telepules",
+              "network_id": 0,
+              "geomEov": {
+                "type": "Point",
+                "coordinates": [
+                  775030,
+                  306112
+                ]
+              }
+            },
+            {
+              "settlement_name": "Miskolctapolca",
+              "lsname": "Miskolctapolca",
+              "ls_id": 0,
+              "settlement_id": 3045,
+              "site_code": "3045F9",
+              "type": "telepules",
+              "network_id": 0,
+              "geomEov": {
+                "type": "Point",
+                "coordinates": [
+                  775030,
+                  306112
+                ]
+              }
+            },
+            {
+              "settlement_name": "Miskolc",
+              "lsname": "Miskolc, autóbusz-állomás",
+              "ls_id": 3565,
+              "settlement_id": 3045,
+              "site_code": "3045F1",
+              "type": "megallo",
+              "network_id": 1,
+              "geomEov": {
+                "type": "Point",
+                "coordinates": [
+                  779889,
+                  308367
+                ]
+              }
+            },
+            {
+              "settlement_name": "Miskolc",
+              "lsname": "Miskolc-Tiszai pu.",
+              "ls_id": 27501179,
+              "settlement_id": 3045,
+              "site_code": "3045F1",
+              "type": "megallo",
+              "network_id": 2,
+              "geomEov": {
+                "type": "Point",
+                "coordinates": [
+                  781243,
+                  307573
+                ]
+              }
+            },
+            {
+              "settlement_name": "Miskolc",
+              "lsname": "Miskolc (Diósgyőr), Felső-Majláth",
+              "ls_id": 3517,
+              "settlement_id": 3045,
+              "site_code": "3045F1",
+              "type": "megallo",
+              "network_id": 1,
+              "geomEov": {
+                "type": "Point",
+                "coordinates": [
+                  771283,
+                  308489
+                ]
+              }
+            },
+            {
+              "settlement_name": "Miskolc",
+              "lsname": "Miskolc (Lillafüred), 5-ös végállomás",
+              "ls_id": 3525,
+              "settlement_id": 3045,
+              "site_code": "3045F2_05",
+              "type": "megallo",
+              "network_id": 1,
+              "geomEov": {
+                "type": "Point",
+                "coordinates": [
+                  767078,
+                  306752
+                ]
+              }
+            },
+            {
+              "settlement_name": "Miskolc",
+              "lsname": "Miskolc (Szirma), Erkel Ferenc utca",
+              "ls_id": 3528,
+              "settlement_id": 3045,
+              "site_code": "3045F6",
+              "type": "megallo",
+              "network_id": 1,
+              "geomEov": {
+                "type": "Point",
+                "coordinates": [
+                  782512,
+                  303565
+                ]
+              }
+            },
+            {
+              "settlement_name": "Miskolc",
+              "lsname": "Miskolc, Déli Ipari Park",
+              "ls_id": 66157,
+              "settlement_id": 3045,
+              "site_code": "3045F1",
+              "type": "megallo",
+              "network_id": 1,
+              "geomEov": {
+                "type": "Point",
+                "coordinates": [
+                  781359,
+                  303094
+                ]
+              }
+            },
+            {
+              "settlement_name": "Miskolc",
+              "lsname": "Miskolc, DIGÉP főkapu",
+              "ls_id": 3534,
+              "settlement_id": 3045,
+              "site_code": "3045F1",
+              "type": "megallo",
+              "network_id": 1,
+              "geomEov": {
+                "type": "Point",
+                "coordinates": [
+                  774662,
+                  306959
+                ]
+              }
+            },
+            {
+              "settlement_name": "Miskolc",
+              "lsname": "Miskolc, Egyetem, kollégiumok",
+              "ls_id": 3585,
+              "settlement_id": 3045,
+              "site_code": "3045F1",
+              "type": "megallo",
+              "network_id": 1,
+              "geomEov": {
+                "type": "Point",
+                "coordinates": [
+                  778322,
+                  305330
+                ]
+              }
+            }
+          ]
+        },
+        "headers": {
+            "Content-Type": "application/json"
+        }
+      }
+    }
+  ]
+}

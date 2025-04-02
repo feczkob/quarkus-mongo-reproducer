@@ -1,0 +1,366 @@
+openapi: 3.0.0
+info:
+  title: Menetrendek API
+  version: 1.0.0
+  description: API for Menetrendek transportation services.
+servers:
+  #  ! the URL is this, don't change it
+  - url: https://menetrendek.hu/menetrend/newinterface
+tags:
+  - name: menetrendek
+    description: Menetrendek API
+paths:
+  /index.php:
+    post:
+      tags:
+        - menetrendek
+      operationId: generalRequest
+      summary: General request to Menetrendek API
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BaseRequest'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+components:
+  schemas:
+    BaseRequest:
+      type: object
+      properties:
+        type:
+          type: string
+      required:
+        - type
+      discriminator:
+        propertyName: type
+        mapping:
+          route: '#/components/schemas/RouteRequest'
+          station: '#/components/schemas/StationRequest'
+    RouteRequest:
+      allOf:
+        - $ref: '#/components/schemas/BaseRequest'
+        - type: object
+          properties:
+            func:
+              type: string
+              default: "getRoutes"
+            params:
+              $ref: '#/components/schemas/RouteRequestParams'
+    RouteRequestParams:
+      type: object
+      properties:
+        datum:
+          type: string
+          format: date
+          example: "2021-01-01"
+        honnan_ls_id:
+          type: integer
+          example: 0
+        honnan_settlement_id:
+          type: integer
+          example: 1201
+        hova_ls_id:
+          type: integer
+          example: 0
+        hova_settlement_id:
+          type: integer
+          example: 1642
+        hour:
+          type: string
+          example: "20"
+          description: "Hours"
+        min:
+          type: string
+          example: "04"
+          description: "Minutes"
+        naptipus:
+          type: integer
+          default: 0
+        preferencia:
+          type: string
+          default: "0"
+    StationRequest:
+      allOf:
+        - $ref: '#/components/schemas/BaseRequest'
+        - type: object
+          properties:
+            func:
+              type: string
+              default: "getStationOrAddrByTextC"
+            params:
+              $ref: '#/components/schemas/StationRequestParams'
+    StationRequestParams:
+      type: object
+      properties:
+        inputText:
+          type: string
+          example: Becske
+        searchIn:
+          type: array
+          items:
+            type: string
+          default: [ "stations" ]
+        networks:
+          type: array
+          items:
+            type: integer
+          default: [ 1, 2, 3, 10, 11, 12, 13, 14, 24, 25, 26 ]
+        maxResults:
+          type: integer
+          default: 10
+      required:
+        - inputText
+        - searchIn
+        - networks
+    StationResponse:
+      type: object
+      properties:
+        status:
+          type: array
+          items:
+            type: string
+          example: [ "success" ]
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/StationResult'
+      required:
+        - status
+        - results
+    StationResult:
+      type: object
+      properties:
+        settlement_name:
+          type: string
+          example: "Becske"
+          nullable: false
+        lsname:
+          type: string
+          example: "Becske"
+          nullable: false
+        ls_id:
+          type: integer
+          example: 0
+          nullable: false
+        site_code:
+          type: string
+          example: ""
+        settlement_id:
+          type: integer
+          example: 1201
+          nullable: false
+        type:
+          type: string
+          example: "telepules"
+        network_id:
+          type: integer
+          example: 0
+        geomEov:
+          type: object
+          properties:
+            type:
+              type: string
+              example: "Point"
+            coordinates:
+              type: array
+              items:
+                type: integer
+              example: [ 673437, 286190 ]
+      required:
+        - settlement_name
+        - lsname
+        - ls_id
+        - settlement_id
+    RouteResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: "success"
+        results:
+          $ref: '#/components/schemas/RouteResult'
+        nativeResults:
+          type: object
+          nullable: true
+      required:
+        - status
+        - results
+    RouteResult:
+      type: object
+      properties:
+        napkiiras:
+          type: string
+          example: "2024-05-20 napon"
+        date_got:
+          type: string
+          example: "2024-05-20"
+        daytype_got:
+          type: integer
+          example: 0
+        apache_hostname:
+          type: string
+          example: ""
+        used_params:
+          type: object
+          properties:
+            mode:
+              type: string
+              example: "stop_based"
+            SearchStartTime:
+              type: integer
+              example: 0
+        talalatok:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/Route'
+      required:
+        - date_got
+    Route:
+      type: object
+      properties:
+        ind_prefix:
+          type: string
+          example: ""
+        indulasi_hely:
+          type: string
+          example: "Becske, posta"
+        ind_kulterulet:
+          type: boolean
+          example: false
+        departureCity:
+          type: string
+          example: "Becske"
+        departureStation:
+          type: string
+          example: "posta"
+        departureLs:
+          type: integer
+          example: 10857
+        erk_prefix:
+          type: string
+          example: ""
+        erkezesi_hely:
+          type: string
+          example: "Alsópetény, községháza"
+        erk_kulterulet:
+          type: boolean
+          example: false
+        arrivalCity:
+          type: string
+          example: "Alsópetény"
+        arrivalStation:
+          type: string
+          example: "községháza"
+        arrivalLs:
+          type: integer
+          example: 10829
+        indulasi_ido:
+          type: string
+          example: "12:22"
+        erkezesi_ido:
+          type: string
+          example: "13:55"
+        atszallasok_szama:
+          type: integer
+        osszido:
+          type: string
+          example: "01:33"
+        riskyTransfer:
+          type: boolean
+          example: false
+        totalFare:
+          type: integer
+          example: 900
+        nativeData:
+          type: array
+          items:
+            $ref: "#/components/schemas/RouteNativeData"
+      required:
+        - departureCity
+        - departureStation
+        - departureLs
+        - arrivalCity
+        - arrivalStation
+        - arrivalLs
+        - indulasi_ido
+        - erkezesi_ido
+        - osszido
+        - totalFare
+        - atszallasok_szama
+        - riskyTransfer
+        - nativeData
+    RouteNativeData:
+      type: object
+      properties:
+        DepartureSettle:
+          type: integer
+          example: 1201
+          description: "Departure settlement"
+        DepartureStation:
+          type: integer
+          example: 10857
+          description: "Departure station"
+        FromSettle:
+          type: string
+          example: "Miskolc"
+          description: "Departure settlement name"
+        DepStationName:
+          type: string
+          example: "Becske, posta"
+          description: "Departure station name"
+        DepartureTime:
+          type: integer
+          example: 742
+          description: "Departure time in minutes from midnight"
+        ArrivalSettle:
+          type: integer
+          example: 238
+          description: "Arrival settlement"
+        ArrivalStation:
+          type: integer
+          example: 10859
+          description: "Arrival station"
+        ToSettle:
+          type: string
+          example: "Budapest"
+          description: "Arrival settlement name"
+        ArrStationName:
+          type: string
+          example: "Alsópetény, községháza"
+          description: "Arrival station name"
+        ArrivalTime:
+          type: integer
+          example: 750
+          description: "Arrival time in minutes from midnight"
+        TransportMode:
+          type: string
+          example: "vehicles.train"
+          description: "Transport mode. Possible values include 'vehicles.train' and 'vehicles.bus'"
+        LongName:
+          type: string
+          example: "4123/893"
+          description: "Number of the transport (e.g. train number, bus number, etc.)"
+      required:
+        - DepartureSettle
+        - DepartureStation
+        - FromSettle
+        - DepStationName
+        - DepartureTime
+        - ArrivalSettle
+        - ArrivalStation
+        - ToSettle
+        - ArrStationName
+        - ArrivalTime
+        - TransportMode
+        - LongName

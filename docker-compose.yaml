@@ -1,0 +1,18 @@
+### FOR LOCAL DEVELOPMENT ###
+
+services:
+  nbt-planner-ab:
+    container_name: nbt-planner-ab_app_1
+    build:
+      context: .
+      dockerfile: src/main/docker/simple/Dockerfile.jvm
+    ports:
+      - '8080:8080'
+    networks:
+      - nbt-planner
+
+networks:
+  nbt-planner:
+    driver: bridge
+    name: nbt-planner
+    external: true
